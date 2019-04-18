@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/tbalthazar/onesignal-go/testhelper"
+	"github.com/igungor/onesignal/testhelper"
 )
 
 var samplePlayerRequest = &PlayerRequest{
