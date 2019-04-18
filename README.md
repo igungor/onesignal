@@ -5,13 +5,7 @@ This library provides a simple SDK to access the [OneSignal API](https://documen
 ## Installation
 
 ```
-go get github.com/igungor/onesignalo
-```
-
-## Usage
-
-```go
-import "github.com/igungor/onesignalo"
+go get github.com/igungor/onesignal
 ```
 
 ## Documentation
