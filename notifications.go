@@ -57,6 +57,7 @@ type NotificationRequest struct {
 	IOSBadgeCount          int               `json:"ios_badgeCount,omitempty"`
 	IOSSound               string            `json:"ios_sound,omitempty"`
 	IOSAttachments         map[string]string `json:"ios_attachments,omitempty"`
+	IOSCategory            string            `json:"ios_category,omitempty"`
 	AndroidSound           string            `json:"android_sound,omitempty"`
 	ADMSound               string            `json:"adm_sound,omitempty"`
 	WPSound                string            `json:"wp_sound,omitempty"`
