@@ -141,7 +141,8 @@ func (c *Client) Do(r *http.Request, v interface{}) (*http.Response, error) {
 
 	dec := json.NewDecoder(resp.Body)
 	err = dec.Decode(&v)
-	if err != nil {
+	// it returns EOF if http status 204 (no content available)
+	if err != nil && err != io.EOF {
 		return resp, err
 	}
 	return resp, nil
@@ -154,7 +155,7 @@ func (c *Client) Do(r *http.Request, v interface{}) (*http.Response, error) {
 // response body will be silently ignored.
 func CheckResponse(r *http.Response) error {
 	switch r.StatusCode {
-	case http.StatusOK:
+	case http.StatusOK, http.StatusNoContent:
 		return nil
 	case http.StatusInternalServerError:
 		return &ErrorResponse{
